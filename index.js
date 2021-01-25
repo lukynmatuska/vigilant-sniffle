@@ -9,6 +9,11 @@ let parser = new xml.SaxParser((cb) => {
     cb.onStartDocument(() => { })
     cb.onEndDocument(() => {
         console.log(fruits)
+        try {
+            fs.writeFileSync('ovoce.json', JSON.stringify(fruits))
+        } catch (err) {
+            console.error(err)
+        }
     })
     cb.onStartElementNS((elem, attrs, prefix, uri, namespaces) => {
         // console.log(`=> Started: ${elem} uri=${uri} (Attributes: ${JSON.stringify(attrs)})`)
