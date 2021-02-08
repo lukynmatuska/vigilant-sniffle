@@ -11,6 +11,7 @@ let parser = new xml.SaxParser((cb) => {
     cb.onEndDocument(() => {
         console.log(`Summary price of all fruit is ${price}.`)
         try {
+            fruits.push(new Fruit(fruit.name, fruit.pricePerPiece, fruit.weight))
             fs.writeFileSync('ovoce.json', JSON.stringify(fruits))
             console.log('File \'ovoce.json\' saved.')
         } catch (err) {
