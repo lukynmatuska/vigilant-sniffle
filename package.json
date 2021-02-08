@@ -5,12 +5,13 @@
   "main": "index.js",
   "dependencies": {
     "fs": "0.0.1-security",
-    "sax-parser": "^2.0.1"
+    "sax-parser": "^2.0.1",
+    "xml2js": "^0.4.23"
   },
   "devDependencies": {},
   "scripts": {
-    "develop": "nodemon . --ignore 'ovoce.json'",
-    "test": "npm i && node index.js && cat ovoce.json"
+    "develop": "nodemon . --ignore 'ovoce.json' --ignore 'students.json'",
+    "test": "npm i && node index.js && cat ovoce.json students.json"
   },
   "repository": {
     "type": "git",
