@@ -5,12 +5,14 @@ const Fruit = require('./Fruit')
 let fruits = []
 let fruit = {}
 let keyForChars
+let price = 0
 let parser = new xml.SaxParser((cb) => {
     cb.onStartDocument(() => { })
     cb.onEndDocument(() => {
-        console.log(fruits)
+        console.log(`Summary price of all fruit is ${price}.`)
         try {
             fs.writeFileSync('ovoce.json', JSON.stringify(fruits))
+            console.log('File \'ovoce.json\' saved.')
         } catch (err) {
             console.error(err)
         }
@@ -33,6 +35,7 @@ let parser = new xml.SaxParser((cb) => {
             case 'nazev':
                 keyForChars = 'name'
                 fruit.pricePerPiece = attrs[0][1]
+                price += Number(fruit.pricePerPiece)
                 break
 
             case 'vaha':
