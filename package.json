@@ -10,7 +10,7 @@
   "devDependencies": {},
   "scripts": {
     "develop": "nodemon . --ignore 'ovoce.json'",
-    "test": "node index.js && cat ovoce.json"
+    "test": "npm i && node index.js && cat ovoce.json"
   },
   "repository": {
     "type": "git",
