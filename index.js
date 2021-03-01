@@ -10,6 +10,8 @@ function saxF() {
 function domF() {
     console.log('DOM:')
     const dom = require('./dom')
+    dom.students()
+    dom.fruit()
 }
 
 try {

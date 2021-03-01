@@ -10,8 +10,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "develop": "nodemon . --ignore 'ovoce.json' --ignore 'students.json'",
-    "test": "npm i && node index.js && cat ovoce.json students.json"
+    "develop": "nodemon . --ignore 'ovoce.json' --ignore 'ovoce.dom.json' --ignore 'students.json'",
+    "test": "npm i && node index.js && cat ovoce.json ovoce.dom.json students.json"
   },
   "repository": {
     "type": "git",
